@@ -559,6 +559,38 @@ h1 {
 This is useful for creating responsive text and spacing without needing
 as many media queries.
 
+### Linking External Libraries
+
+You can link external libraries in your HTML to use tools and resources created by other developers without having to build everything yourself.
+
+For example, **[Font Awesome](https://fontawesome.com/)** provides icons you can add to your website, such as social media logos, arrows, and other symbols.
+
+Add a `<link>` tag inside your `<head>` to load the Font Awesome CSS stylesheet:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+```
+
+Once it's linked, you can use Font Awesome icons in your HTML:
+
+```html
+<i class="fa-solid fa-heart"></i>
+<i class="fa-brands fa-github"></i>
+```
+
+- **`rel="stylesheet"`** tells the browser that the linked file is a CSS stylesheet.
+- **`href`** specifies the URL where the stylesheet is located.
+- **Icon classes** such as `fa-solid fa-heart` specify which icon to display.
+
+You can explore more icons and find their class names in the [Font Awesome icon library](https://fontawesome.com/search).
+
+**Other things to explore:** Google Fonts for custom fonts, Bootstrap for pre-built components and layouts, and external CSS libraries for additional styling options.
+
+*Note: External libraries require an internet connection to load when using a hosted stylesheet like the one above.*
+
 ### More CSS stuff to look into!
 
 Once you're comfortable with the basics of CSS, here are some useful topics to explore to make your websites more interactive and visually appealing!
