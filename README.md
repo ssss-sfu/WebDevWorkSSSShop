@@ -68,10 +68,18 @@ There are a lot of different elements, here are some of the basic ones:
 ```
 
 - Images
-    - TODO
-    - `<img/>` is an exception to the opening/closing tag thing
+    - `<img src="" alt=""/>` is an exception and only has an opening tag, no closing tag
+    - `src=""` specifies the path or URL of the image you want to display.
+    - `alt=""` provides alternative text that describes the image for accessibility. It also appears if the image cannot load.
 
-- TODO: Explain article, main, nav, footer briefly (all show up in `index.html`)
+`<article>, <main>, <nav>, <footer>` are all semantic HTML elements that act as containers for content.
+- HTML treats them similarly in terms of layout by default, but each element has a different meaning that describes the purpose of its content.
+- Using these elements makes your code easier to read and understand for both developers and assistive technologies.
+- Examples:
+    - `<main>`: Contains the main content of the page.
+    - `<nav>`: Contains navigation links.
+    - `<article>`: Contains independent content, such as a blog post.
+    - `<footer>`: Contains footer information, such as contact details or copyright information.
 
 Just like any other programming language, HTML also have comments:
 
@@ -109,9 +117,35 @@ Just like any other programming language, HTML also have comments:
 
 #### Nesting Elements
 
-- TODO: Show how you can nest elements
-    - Show an example of `<article class="work-experience-item">` for example
-    - Show how you can link images by nesting `<a>` and `<img>`
+You can nest elements by placing one HTML element inside another. This helps you group related content and control how it is structured.
+
+Example 1: Nesting elements in an article
+```html
+<article class="work-experience-item">
+    <h2>Software Developer Intern</h2>
+    <p>ABC Company | May 2026 – August 2026</p>
+    <p>Developed web applications using HTML, CSS, and JavaScript.</p>
+</article>
+```
+
+- `<article>` groups all the information about one work experience entry.
+- `class="work-experience-item"` gives the element a class that you can target with CSS to style all your work experience entries consistently.
+- The `<h2>` and`<p>` elements are nested inside the `<article>` element.
+
+Example 2: Making an image clickable
+
+You can nest an `<img>` element inside an `<a>` element to make an image clickable. Clicking the image will take the user to the link specified by href.
+
+```html
+<a href="https://www.google.com">
+    <img src="images/cat.jpg" alt="A cat sitting on a chair">
+</a>
+```
+
+- `<a href="">` creates a link to another page or website.
+- `<img src="">` displays the image.
+- Nesting the `<img>` inside the `<a>` makes the image itself clickable.
+Tip: The opening and closing tags must be properly nested. Close the inner element before closing the outer element.
 
 ### CSS (Cascading Style Sheets)
 
@@ -207,9 +241,43 @@ Every HTML element can be thought of as a box. The CSS box model d
     
 ![Nested boxes, from outermost to innermost; margin, border, padding, content](box-model.png)
 
-#### TODO:
+### CSS Sizing Units
 
-Explain
+CSS units control the size of elements, text, spacing, and containers.
+
+| Unit | Description | Example |
+|---|---|---|
+| `px` | Fixed CSS pixel size | `width: 300px;` |
+| `%` | Relative to the parent element's size, depending on the property | `width: 80%;` |
+| `em` | Relative to the element's font size (or inherited font size, depending on the property) | `padding: 1em;` |
+| `rem` | Relative to the root (`html`) font size, usually 16px by default | `font-size: 2rem;` |
+| `vw` | 1% of the viewport width | `width: 100vw;` |
+| `vh` | 1% of the viewport height | `height: 100vh;` |
+
+Example:
+```css
+.container {
+    width: 80%;
+    max-width: 1000px;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.hero {
+    min-height: 100vh;
+}
+```
+
+Which unit should you use?
+- `px`: Precise sizes, such as borders and small icons.
+- `%`: Responsive widths relative to a parent element.
+- `em` and `rem`: Text sizes and spacing that scale with font size.
+- `vw` and `vh`: Sizes based on the browser window.
+
+**Tip:** Use `%`, `rem`, and viewport units to help create responsive websites that adapt to different screen sizes.
 
 #### Changing Fonts
 
